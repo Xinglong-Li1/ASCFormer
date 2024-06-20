@@ -1,13 +1,13 @@
 
-# ASCFromer: An Adaptive Strucure-aware Cascaded Transformer for 3D Object Detection
+# ASCFormer: An Adaptive Strucure-aware Cascaded Transformer for 3D Object Detection
 
 
-This is the code for ASCFromer(An Adaptive Strucure-aware Cascaded Transformer for 3D Object Detection). 
+This is the code for ASCFormer(An Adaptive Strucure-aware Cascaded Transformer for 3D Object Detection). 
 This code is mainly based on [OpenPCDet](https://github.com/open-mmlab/OpenPCDet), some codes are from [TED](https://github.com/hailanyi/TED), 
 [CasA](https://github.com/hailanyi/CasA), [IA-SSD](https://github.com/yifanzhang713/IA-SSD) and [CasA](https://github.com/hailanyi/CasA).
 
 ## Detection Framework
-3D object detection has achieved significant progress in outdoor LiDAR point clouds, however, the inherent irregularity and varying sparsity distribution of point occupancy is a key challenge. Existing transformer-based 3D detectors often take all tokens within the attention window as equally important regardless of varying-sparsity, which not only fails to adapt to the gap between the varying beam-densities but also results in increased the memory and computational cost. In this paper, we propose an Adaptive Structure-aware  cascaded transformer (ASCFromer) that dynamically captures the density insensitive multiscale structure features to model the long-range dependencies via cascaded learning. This approach involves an adaptive structure-aware tokens selector that introduces voxel level segmentation auxiliary network and local density estimation to select a subset of multi-scale tokens with varying receptive field sizes using inverse transform sampling over the significance scores. The selected tokens not only embed the position of voxel point centroids but also encode the foreground probability and point density as the features. To improve the training convergence of the window-based transformer in 3D voxel space, we employ cascaded learning via cross-stage attention to enhance the feature representation capability for more refinement the localization precision of 3D bounding boxes. This design of structure-aware re-weighting gracefully enhances the cascade paradigm to be better adaptable for the varying-sparsity distribution of input data. Extensive experiments on the KITTI and Waymo Open datasets demonstrate that the proposed ASCFromer achieves exceptional performance compared to state-of-the-art 3D object detection methods.
+3D object detection has achieved significant progress in outdoor LiDAR point clouds, however, the inherent irregularity and varying sparsity distribution of point occupancy is a key challenge. Existing transformer-based 3D detectors often take all tokens within the attention window as equally important regardless of varying-sparsity, which not only fails to adapt to the gap between the varying beam-densities but also results in increased the memory and computational cost. In this paper, we propose an Adaptive Structure-aware  cascaded transformer (ASCFormer) that dynamically captures the density insensitive multiscale structure features to model the long-range dependencies via cascaded learning. This approach involves an adaptive structure-aware tokens selector that introduces voxel level segmentation auxiliary network and local density estimation to select a subset of multi-scale tokens with varying receptive field sizes using inverse transform sampling over the significance scores. The selected tokens not only embed the position of voxel point centroids but also encode the foreground probability and point density as the features. To improve the training convergence of the window-based transformer in 3D voxel space, we employ cascaded learning via cross-stage attention to enhance the feature representation capability for more refinement the localization precision of 3D bounding boxes. This design of structure-aware re-weighting gracefully enhances the cascade paradigm to be better adaptable for the varying-sparsity distribution of input data. Extensive experiments on the KITTI and Waymo Open datasets demonstrate that the proposed ASCFormer achieves exceptional performance compared to state-of-the-art 3D object detection methods.
 
 ![](./docs/framework.png)
 
@@ -150,7 +150,7 @@ You can run ```cat log.txt``` to view the training process.
 
 ```
 @inproceedings{ASTFormer,
-    title={ASCFromer: An Adaptive Strucure-aware Cascaded Transformer for 3D Object Detection},
+    title={ASCFormer: An Adaptive Strucure-aware Cascaded Transformer for 3D Object Detection},
     author={Li, Xinglong and Zhang, Xiaowei},
     booktitle={},
     year={2023}
