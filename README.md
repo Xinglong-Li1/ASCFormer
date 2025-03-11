@@ -145,6 +145,7 @@ You can run ```cat log.txt``` to view the training process.
 
 [IA-SSD](https://github.com/yifanzhang713/IA-SSD)
 
+[PDV](https://github.com/TRAILab/PDV)
 
 ## Citation
 
